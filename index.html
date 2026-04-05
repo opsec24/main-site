@@ -3,167 +3,349 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OPSEC24</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>OPSEC24 | Penetration Testing &amp; Red Team Services</title>
+    <meta name="description" content="OPSEC24 is a professional penetration testing and offensive security company helping enterprises identify exploitable risk and accelerate remediation.">
+    <meta name="theme-color" content="#03060f">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="logos/Favicon.jpg" sizes="32x32" />
-    <link rel="shortcut icon" href="logos/Favicon.jpg" />
-    <link rel="apple-touch-icon" href="logos/Complete logo.png" />
-    <meta name="theme-color" content="#050a14">
 </head>
 <body>
 
-    <div class="circuit-bg"></div>
-<a href="#" class="logo-container">
-    <img src="logos/logo.jpg" alt="OPSEC24" class="nav-logo">
-</a>
-    <nav class="navbar" role="navigation">
-       <a href="#" class="logo-container">
-    <img id="navLogo" src="logos/logo.jpg" data-mobile-src="logos/Favicon.jpg" alt="OPSEC24" class="nav-logo">
-</a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation"><i class="fas fa-bars"></i></button>
-        <ul id="primary-navigation" class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="mailto:opsec24team@gmail.com" class="btn-outline">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="shield-icon">
-                <img src="logos/Complete logo.png" alt="OPSEC24 complete logo" class="hero-logo hero-logo--complete" loading="lazy">
-            </div>
-            <h1 class="glitch" data-text="SURYA PRASANTH">SURYA PRASANTH</h1>
-            <h2 id="typewriter">Offensive Security & Red Teaming (alias: OPSEC24)</h2>
-            <p>I provide hands-on penetration testing, red teaming, and security consulting to help teams reduce risk and improve resilience.</p>
-            <div class="cta-buttons">
-                <a href="mailto:opsec24team@gmail.com" class="btn-neon">Hire Me</a>
-                <a href="#skills" class="btn-ghost">Learn More</a>
-            </div>
+    <canvas id="canvas-bg" aria-hidden="true"></canvas>
+    <header class="topbar" id="topbar">
+        <div class="wrap topbar-wrap">
+            <a href="#home" class="brand" aria-label="OPSEC24 Home">
+                <span class="brand-core">OPSEC<span class="brand-accent">24</span></span>
+                <span class="brand-sub">Offensive Security</span>
+            </a>
+            <button class="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav>
+                <ul id="site-nav" class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#approach">Approach</a></li>
+                    <li><a href="#industries">Industries</a></li>
+                    <li><a href="#credentials">Credentials</a></li>
+                    <li><a href="#contact" class="btn btn-primary nav-cta">Book a Call</a></li>
+                </ul>
+            </nav>
         </div>
-    </section>
+    </header>
 
-    <section id="skills" class="services">
-        <h2 class="section-title">Skills</h2>
-        <div class="card-grid">
-            <div class="card">
-                <i class="fas fa-network-wired"></i>
-                <h3>Network Penetration Testing</h3>
-                <p>Internal & external network testing — Active Directory assessments, privilege escalation, and lateral movement analysis.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-cloud"></i>
-                <h3>Cloud (AWS) Testing</h3>
-                <p>AWS-focused assessments: IAM, S3/bucket security, misconfigurations, and cloud identity/network risks.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-bug"></i>
-                <h3>Application Security</h3>
-                <p>Web (REST, SOAP), APIs, mobile (iOS/Android), and thick client testing — auth, business logic, and API security.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-code"></i>
-                <h3>Source Code Analysis</h3>
-                <p>SAST & DAST, secure code review, and remediation guidance for insecure patterns and cryptography issues.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-user-secret"></i>
-                <h3>LLM Red Teaming</h3>
-                <p>Prompt and model-level adversarial testing to identify and mitigate LLM vulnerabilities.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-search"></i>
-                <h3>OSINT</h3>
-                <p>Asset discovery, public leak detection, and reconnaissance to reduce external exposure.</p>
-            </div>
-        </div>
-    </section>
+    <main id="home">
 
-    <section id="about" class="about">
-        <h2 class="section-title">About</h2>
-        <div class="about-content">
-            <p>I'm <strong>Surya Prasanth</strong>, a Lead Penetration Tester at Experian with a lifelong passion for information security that began during my school days and more than 8 years of professional experience. I combine deep technical expertise across network, cloud, application, and LLM security with proven leadership and management capabilities—building and mentoring penetration testing teams, driving compliance and audit readiness, and operating effectively within enterprise cultures. I deliver pragmatic, evidence-driven assessments and clear remediation guidance to help engineering and security stakeholders reduce risk and improve resilience.</p>
-            <ul class="about-list">
-                <li><strong>Location:</strong> Based in Hyderabad, Telangana, India</li>
-                <li><strong>Focus:</strong> Network, Cloud (AWS), Application, Source Code, LLM security</li>
-                <li><strong>Contact:</strong> <a href="mailto:opsec24team@gmail.com">opsec24team@gmail.com</a></li>
-            </ul>
-        </div>
-    </section>
+        <!-- ========== HERO ========== -->
+        <section class="hero">
+            <div class="wrap hero-grid">
 
-    <section id="experience" class="experience">
-        <h2 class="section-title">Experience</h2>
-        <div class="experience-content">
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Lead Penetration Tester — Experian</h3>
-                    <span class="timeline-date">Present</span>
+                <div class="hero-copy reveal">
+                    <p class="kicker"><span class="kicker-dot"></span>Professional VAPT &amp; Red Team Services</p>
+                    <h1>Secure What <span class="gradient-text">Matters Most</span> Before Attackers Do.</h1>
+                    <p class="lead">OPSEC24 delivers deep offensive security assessments across applications, cloud infrastructure, and enterprise networks — with clear reporting and practical remediation guidance.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="mailto:opsec24team@gmail.com?subject=Security%20Assessment%20Inquiry">
+                            <span>Start Assessment</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <a class="btn btn-ghost" href="#services">Explore Services</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-val"><span class="stat-num" data-target="8">0</span><span class="stat-suffix">+</span></div>
+                            <span class="stat-lbl">Years of offensive security delivery</span>
+                        </div>
+                        <div class="stat-divider" aria-hidden="true"></div>
+                        <div class="stat">
+                            <div class="stat-val"><span class="stat-num" data-target="200">0</span><span class="stat-suffix">+</span></div>
+                            <span class="stat-lbl">Assessments completed</span>
+                        </div>
+                        <div class="stat-divider" aria-hidden="true"></div>
+                        <div class="stat">
+                            <div class="stat-val"><span class="stat-num" data-target="5">0</span></div>
+                            <span class="stat-lbl">Industry certifications held</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="timeline-item">
-                    <h3>Security Engineer — Oracle</h3>
-                </div>
-                <div class="timeline-item">
-                    <h3>Penetration Tester — TCS</h3>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="certifications" class="certifications">
-        <h2 class="section-title">Certifications</h2>
-        <div id="cert-grid" class="cert-grid">
-            <div class="cert-card">
-                <img src="logos/certs/oscp.png" alt="OSCP badge" class="cert-badge">
-                <i class="fas fa-shield-alt cert-fallback" aria-hidden="true"></i>
-                <h3>OSCP</h3>
-                <p>Offensive Security Certified Professional</p>
-            </div>
-            <div class="cert-card">
-                <img src="logos/certs/cissp.png" alt="CISSP badge" class="cert-badge">
-                <i class="fas fa-lock cert-fallback" aria-hidden="true"></i>
-                <h3>CISSP</h3>
-                <p>Certified Information Systems Security Professional</p>
-            </div>
-            <div class="cert-card">
-                <img src="logos/certs/crest-crt.png" alt="CREST CRT badge" class="cert-badge">
-                <i class="fas fa-certificate cert-fallback" aria-hidden="true"></i>
-                <h3>CREST CRT</h3>
-                <p>CREST Registered Tester</p>
-            </div>
-            <div class="cert-card">
-                <img src="logos/certs/crest-cpsa.png" alt="CREST CPSA badge" class="cert-badge">
-                <i class="fas fa-award cert-fallback" aria-hidden="true"></i>
-                <h3>CREST CPSA</h3>
-                <p>CREST Practitioner Security Analyst</p>
-            </div>
-            <div class="cert-card">
-                <img src="logos/certs/secops-aiml.png" alt="SecOps AI/ML Pentester badge" class="cert-badge">
-                <i class="fas fa-robot cert-fallback" aria-hidden="true"></i>
-                <h3>SecOps AI/ML Pentester (C-AI/MLPen)</h3>
-                <p>Adversarial testing for AI/ML systems</p>
-            </div>
-        </div>
-    </section> 
+                <div class="hero-terminal reveal" role="presentation" aria-label="Security assessment terminal simulation">
+                    <div class="terminal-bar">
+                        <span class="t-dot t-dot-red"></span>
+                        <span class="t-dot t-dot-yellow"></span>
+                        <span class="t-dot t-dot-green"></span>
+                        <span class="terminal-title">opsec24 ~ threat-assessment</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p><span class="t-prompt">$</span> <span class="t-cmd">initialize_assessment</span> <span class="t-arg">--scope full --target enterprise</span></p>
+                        <p class="t-out"><span class="t-ok">[OK]</span> Scope alignment confirmed</p>
+                        <p class="t-out"><span class="t-ok">[OK]</span> Threat modelling complete</p>
+                        <p class="t-out"><span class="t-warn">[~~]</span> Running adversarial techniques...</p>
+                        <p class="t-blank">&nbsp;</p>
+                        <p><span class="t-prompt">$</span> <span class="t-cmd">scan_attack_surface</span> <span class="t-arg">--depth aggressive</span></p>
+                        <p class="t-out"><span class="t-ok">[OK]</span> 3 critical findings identified</p>
+                        <p class="t-out"><span class="t-ok">[OK]</span> Business risk context mapped</p>
+                        <p class="t-out"><span class="t-ok">[OK]</span> Remediation roadmap generated</p>
+                        <p class="t-blank">&nbsp;</p>
+                        <p><span class="t-prompt">$</span> <span class="t-cmd">export_report</span> <span class="t-arg">--format exec+technical</span></p>
+                        <p class="t-out"><span class="t-ok">[OK]</span> Report delivered. Retest included.</p>
+                        <p class="t-cursor" aria-hidden="true">&#9611;</p>
+                    </div>
+                </div>
 
-    <section id="contact" class="contact">
-        <h2 class="section-title">Contact Me</h2>
-        <div class="contact-content">
-            <p>Have questions or want to start an engagement? Email me at <a href="mailto:opsec24team@gmail.com">opsec24team@gmail.com</a>.</p>
-            <p>I will reply promptly.</p>
-            <div class="contact-actions">
-                <a href="mailto:opsec24team@gmail.com" class="btn-neon">Email Me</a>
-    
+            </div>
+        </section>
+
+        <!-- ========== TRUST STRIP ========== -->
+        <div class="trust-strip reveal">
+            <div class="wrap trust-wrap">
+                <span class="trust-label">Certifications &amp; Expertise</span>
+                <div class="trust-badges">
+                    <span class="trust-badge">OSCP</span>
+                    <span class="trust-badge">CISSP</span>
+                    <span class="trust-badge">CREST CRT</span>
+                    <span class="trust-badge">CREST CPSA</span>
+                    <span class="trust-badge">C-AI/MLPen</span>
+                </div>
             </div>
         </div>
-    </section>
+
+        <!-- ========== SERVICES ========== -->
+        <section id="services" class="section">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <p class="kicker"><span class="kicker-dot"></span>Services</p>
+                    <h2>Security Testing Built for <span class="gradient-text">Business Risk</span></h2>
+                    <p class="section-desc">We simulate real-world adversaries to expose exploitable weaknesses before they become incidents.</p>
+                </div>
+                <div class="service-grid">
+                    <article class="card reveal">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 40 40" fill="none"><rect x="6" y="10" width="28" height="20" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M13 20h4M19 16l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3>Web &amp; API Penetration Testing</h3>
+                        <p>Manual and adversarial testing for authentication flaws, authorization bypasses, logic abuse, and API exposure.</p>
+                        <span class="card-tag">OWASP Top 10</span>
+                    </article>
+                    <article class="card reveal">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="1.8"/><circle cx="20" cy="20" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M20 8v4M20 28v4M8 20h4M28 20h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3>Network &amp; Active Directory Testing</h3>
+                        <p>Internal and external network validation including privilege escalation, lateral movement, and segmentation breakdown.</p>
+                        <span class="card-tag">Internal &amp; External</span>
+                    </article>
+                    <article class="card reveal">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 40 40" fill="none"><path d="M8 28c0-7 5.4-13 12-13s12 6 12 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M13 28c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="20" cy="28" r="2.2" fill="currentColor"/></svg>
+                        </div>
+                        <h3>Cloud Security Assessment</h3>
+                        <p>Targeted review of IAM weaknesses, misconfigurations, data exposure paths, and workload trust boundaries.</p>
+                        <span class="card-tag">AWS / Azure / GCP</span>
+                    </article>
+                    <article class="card reveal">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 40 40" fill="none"><path d="M20 7l3.5 7 7.5 1.1-5.4 5.3 1.3 7.5L20 24.5l-6.9 3.4 1.3-7.5L9 15.1l7.5-1.1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3>Red Team Exercises</h3>
+                        <p>Objective-driven adversary simulation to test SOC readiness, detection quality, and incident response capability.</p>
+                        <span class="card-tag">Adversary Simulation</span>
+                    </article>
+                    <article class="card reveal">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 40 40" fill="none"><path d="M10 31V14l6.5-6H30v23H10z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16.5 8v6H10M15 22h10M15 26h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3>Source Code &amp; Design Review</h3>
+                        <p>Secure architecture and code-level review to catch vulnerabilities early and reduce remediation cost significantly.</p>
+                        <span class="card-tag">Shift-Left Security</span>
+                    </article>
+                    <article class="card reveal">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 40 40" fill="none"><rect x="8" y="15" width="24" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M15 15v-3a5 5 0 0110 0v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="20" cy="23" r="2" stroke="currentColor" stroke-width="1.8"/><path d="M20 25v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3>AI &amp; LLM Security Testing</h3>
+                        <p>Assessment for prompt injection, unsafe tool usage, sensitive data leakage, and model abuse scenarios in AI systems.</p>
+                        <span class="card-tag">OWASP LLM Top 10</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== APPROACH ========== -->
+        <section id="approach" class="section section-alt">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <p class="kicker"><span class="kicker-dot"></span>Approach</p>
+                    <h2>Clear Process, <span class="gradient-text">Defensible Results</span></h2>
+                    <p class="section-desc">Every engagement follows a structured, repeatable methodology that delivers measurable security outcomes.</p>
+                </div>
+                <div class="process-grid">
+                    <div class="process-card reveal">
+                        <div class="process-num">01</div>
+                        <h3>Scope Alignment</h3>
+                        <p>Define systems, threat profile, success criteria, and compliance context before testing begins.</p>
+                    </div>
+                    <div class="process-card reveal">
+                        <div class="process-num">02</div>
+                        <h3>Threat-Led Testing</h3>
+                        <p>Execute realistic attacker techniques to validate exploitable risk across your entire attack surface.</p>
+                    </div>
+                    <div class="process-card reveal">
+                        <div class="process-num">03</div>
+                        <h3>Evidence &amp; Reporting</h3>
+                        <p>Deliver concise technical detail, risk ratings, and executive-level summary with clear prioritisation.</p>
+                    </div>
+                    <div class="process-card reveal">
+                        <div class="process-num">04</div>
+                        <h3>Remediation Support</h3>
+                        <p>Partner with engineering and security owners to close critical gaps — with free retest included.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== INDUSTRIES ========== -->
+        <section id="industries" class="section">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <p class="kicker"><span class="kicker-dot"></span>Industries</p>
+                    <h2>Built for <span class="gradient-text">High-Trust Environments</span></h2>
+                    <p class="section-desc">We specialise in regulated and security-sensitive industries where the cost of a breach is highest.</p>
+                </div>
+                <div class="industry-grid">
+                    <div class="industry-card reveal">
+                        <div class="industry-icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="10" width="24" height="18" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M10 10V8a6 6 0 0112 0v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="16" cy="19" r="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 21v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3>Financial Services &amp; Payments</h3>
+                        <p>PCI-DSS aligned testing for payment gateways, banking platforms, and fintech infrastructure.</p>
+                    </div>
+                    <div class="industry-card reveal">
+                        <div class="industry-icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none"><path d="M16 4l10 6v12l-10 6L6 22V10z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="16" cy="16" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+                        </div>
+                        <h3>Healthcare &amp; Regulated Data</h3>
+                        <p>HIPAA-aware assessments protecting patient data, medical devices, and clinical systems.</p>
+                    </div>
+                    <div class="industry-card reveal">
+                        <div class="industry-icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="6" width="24" height="20" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M9 14h14M9 18h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3>SaaS &amp; Product Engineering</h3>
+                        <p>Shift-left security testing integrated into SDLC for product teams shipping at speed.</p>
+                    </div>
+                    <div class="industry-card reveal">
+                        <div class="industry-icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none"><path d="M6 22c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M10 22c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="16" cy="22" r="2" fill="currentColor"/></svg>
+                        </div>
+                        <h3>Cloud-First Enterprises</h3>
+                        <p>Multi-cloud assessments for enterprises running critical workloads on AWS, Azure, and GCP.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CREDENTIALS ========== -->
+        <section id="credentials" class="section section-alt">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <p class="kicker"><span class="kicker-dot"></span>Credentials</p>
+                    <h2>Proven <span class="gradient-text">Expertise</span></h2>
+                    <p class="section-desc">Our team holds industry-leading certifications across offensive security, cloud security, and AI systems.</p>
+                </div>
+                <div class="cred-grid">
+                    <div class="cred-card reveal">
+                        <div class="cred-badge">OSCP</div>
+                        <div class="cred-info">
+                            <h3>Offensive Security Certified Professional</h3>
+                            <p>Industry gold standard for hands-on penetration testing capability and real-world exploitation.</p>
+                        </div>
+                    </div>
+                    <div class="cred-card reveal">
+                        <div class="cred-badge">CISSP</div>
+                        <div class="cred-info">
+                            <h3>Certified Information Systems Security Professional</h3>
+                            <p>Enterprise security architecture and governance leadership at the highest level.</p>
+                        </div>
+                    </div>
+                    <div class="cred-card reveal">
+                        <div class="cred-badge">CREST<br>CRT</div>
+                        <div class="cred-info">
+                            <h3>CREST Registered Penetration Tester</h3>
+                            <p>Globally recognised penetration testing accreditation from the UK's gold-standard body.</p>
+                        </div>
+                    </div>
+                    <div class="cred-card reveal">
+                        <div class="cred-badge">CREST<br>CPSA</div>
+                        <div class="cred-info">
+                            <h3>CREST Practitioner Security Analyst</h3>
+                            <p>Foundation-level CREST-accredited security assessment and analysis competence.</p>
+                        </div>
+                    </div>
+                    <div class="cred-card reveal">
+                        <div class="cred-badge">C-AI/<br>ML</div>
+                        <div class="cred-info">
+                            <h3>Certified AI/ML Security Penetration Tester</h3>
+                            <p>Specialised AI system security assessment, prompt injection, and adversarial testing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CTA ========== -->
+        <section id="contact" class="section cta-section">
+            <div class="wrap">
+                <div class="cta-card reveal">
+                    <div class="cta-glow" aria-hidden="true"></div>
+                    <div class="cta-content">
+                        <p class="kicker kicker-center"><span class="kicker-dot"></span>Ready to Engage?</p>
+                        <h2>Start Your Security <span class="gradient-text">Assessment Today</span></h2>
+                        <p>Share your target systems, expected timeline, and objective. We'll recommend the right testing model for your environment and deliver a scoped proposal within 48 hours.</p>
+                        <div class="cta-actions">
+                            <a class="btn btn-primary" href="mailto:opsec24team@gmail.com?subject=Consultation%20Request">
+                                <span>Email OPSEC24</span>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+                            <a class="btn btn-ghost" href="#home">Back to Top</a>
+                        </div>
+                        <ul class="cta-points">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4" stroke="#00d4ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Scoping call within 24 hours
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4" stroke="#00d4ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Scoped proposal in under 48 hours
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4" stroke="#00d4ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Free retest included with every engagement
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer>
-        <p>&copy; 2026 Surya Prasanth (OPSEC24). All rights reserved.</p>
+        <div class="wrap footer-wrap">
+            <div class="footer-brand">
+                <span class="brand-core footer-logo">OPSEC<span class="brand-accent">24</span></span>
+                <p>Professional Penetration Testing &amp; Red Team Services</p>
+            </div>
+            <nav class="footer-links" aria-label="Footer navigation">
+                <a href="#services">Services</a>
+                <a href="#approach">Approach</a>
+                <a href="#industries">Industries</a>
+                <a href="#credentials">Credentials</a>
+                <a href="mailto:opsec24team@gmail.com">Contact</a>
+            </nav>
+            <p class="footer-legal">&copy; <span id="year"></span> OPSEC24. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
