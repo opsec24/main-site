@@ -27,6 +27,7 @@
 }
 
 html {
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
@@ -35,7 +36,6 @@ body {
     color: var(--text);
     font-family: var(--font-body);
     line-height: 1.65;
-    overflow-x: hidden;
 }
 
 #canvas-bg {
@@ -278,6 +278,7 @@ h3 {
 .hero {
     align-items: center;
     display: flex;
+    min-height: 100vh;
     min-height: 100svh;
     padding: 120px 24px 80px;
     position: relative;
