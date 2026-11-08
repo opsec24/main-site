@@ -1,78 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ===== PARTICLE NETWORK BACKGROUND =====
-    const canvas = document.getElementById("canvas-bg");
-    if (canvas) {
-        const ctx = canvas.getContext("2d");
-        let particles = [];
-        let raf;
-
-        function resize() {
-            canvas.width  = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-
-        function initParticles() {
-            const count = Math.min(Math.floor((canvas.width * canvas.height) / 13000), 85);
-            particles = Array.from({ length: count }, () => ({
-                x:  Math.random() * canvas.width,
-                y:  Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.38,
-                vy: (Math.random() - 0.5) * 0.38,
-                r:  Math.random() * 1.4 + 0.4,
-            }));
-        }
-
-        function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            const c = "0, 212, 255";
-
-            for (let i = 0; i < particles.length; i++) {
-                const p = particles[i];
-                p.x += p.vx;
-                p.y += p.vy;
-                if (p.x < 0)             p.x = canvas.width;
-                if (p.x > canvas.width)  p.x = 0;
-                if (p.y < 0)             p.y = canvas.height;
-                if (p.y > canvas.height) p.y = 0;
-
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(${c}, 0.55)`;
-                ctx.fill();
-
-                for (let j = i + 1; j < particles.length; j++) {
-                    const q  = particles[j];
-                    const dx = p.x - q.x;
-                    const dy = p.y - q.y;
-                    const d  = Math.sqrt(dx * dx + dy * dy);
-                    if (d < 128) {
-                        ctx.beginPath();
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(q.x, q.y);
-                        ctx.strokeStyle = `rgba(${c}, ${(1 - d / 128) * 0.14})`;
-                        ctx.lineWidth   = 0.8;
-                        ctx.stroke();
-                    }
-                }
-            }
-            raf = requestAnimationFrame(draw);
-        }
-
-        const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (!reduced) {
-            resize();
-            initParticles();
-            draw();
-            window.addEventListener("resize", () => {
-                cancelAnimationFrame(raf);
-                resize();
-                initParticles();
-                draw();
-            }, { passive: true });
-        }
-    }
-
     // ===== TOPBAR SCROLL STATE =====
     const topbar = document.getElementById("topbar");
     if (topbar) {
@@ -116,10 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     revealObs.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.05, rootMargin: "0px 0px 60px 0px" });
 
-        reveals.forEach((el, i) => {
-            el.style.transitionDelay = `${Math.min((i % 7) * 75, 450)}ms`;
+        reveals.forEach((el) => {
             revealObs.observe(el);
         });
     } else {
@@ -155,4 +81,3 @@ document.addEventListener("DOMContentLoaded", () => {
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 });
-
