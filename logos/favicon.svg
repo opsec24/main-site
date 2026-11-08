@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="112" fill="#0A2240"/>
+  <!-- Subtle inner border -->
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="none" stroke="#0C356A" stroke-width="8"/>
+  <!-- Shield outline -->
+  <path d="M256 64 L416 128 V272 C416 376 256 448 256 448 C256 448 96 376 96 272 V128 Z" fill="#07172C" stroke="#D4AF37" stroke-width="18" stroke-linejoin="round"/>
+  <!-- Inner Shield accent -->
+  <path d="M256 96 L384 148 V264 C384 348 256 412 256 412 C256 412 128 348 128 264 V148 Z" fill="#0A2240" stroke="#FFC436" stroke-width="4" stroke-linejoin="round" opacity="0.6"/>
+  <!-- Text 24 -->
+  <text x="256" y="305" font-family="'Plus Jakarta Sans', 'Montserrat', -apple-system, sans-serif" font-size="168" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="-4">24</text>
+  <!-- Tiny gold lock/dot accent above 24 -->
+  <circle cx="256" cy="180" r="16" fill="#D4AF37"/>
+  <path d="M256 160 V172" stroke="#0A2240" stroke-width="4" stroke-linecap="round"/>
+</svg>
